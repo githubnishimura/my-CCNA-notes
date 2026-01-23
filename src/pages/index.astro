@@ -1,6 +1,8 @@
 ---
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import { Card, CardGrid } from '@astrojs/starlight/components';
+// 1. ここで画像をインポートします
+import houstonImg from '../../assets/houston.webp';
 ---
 
 <StarlightPage frontmatter={{ 
@@ -10,8 +12,9 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 	hero: {
 		title: 'CCNA Study Guide',
 		tagline: '効率的に学び、確実に合格を掴み取るための個人ノートです。',
+		// 2. 文字列ではなく、インポートした変数(houstonImg)を渡します
 		image: {
-			file: '../../assets/houston.webp',
+			file: houstonImg,
 		},
 		actions: [
 			{
