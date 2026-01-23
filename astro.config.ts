@@ -12,6 +12,10 @@ export default defineConfig({
       binding: 'SESSION' // 先ほどBindingsで設定した変数名
     }
   }),
+  // ここを追加：Cloudflareでエラーを起こしやすい画像最適化をバイパスします
+  image: {
+    service: { entrypoint: 'astro/assets/services/noop' }
+  },
   integrations: [
     auth(),
     starlight({
