@@ -3,16 +3,16 @@ import starlight from '@astrojs/starlight';
 import cloudflare from '@astrojs/cloudflare';
 
 export default defineConfig({
-  // テストのため、一旦静的サイト(static)モードにします
-  output: 'static',
+  // cloudflareアダプターを使う場合は、必ず 'server' にします
+  output: 'server',
   adapter: cloudflare(),
-  
-  // 画像エラーを避ける設定
+
   image: {
     service: { entrypoint: 'astro/assets/services/noop' }
   },
 
   integrations: [
+    // ここから auth() を完全に削除しました
     starlight({
       title: 'MyCCNA Notes',
       social: {
