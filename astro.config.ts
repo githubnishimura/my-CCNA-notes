@@ -4,15 +4,13 @@ import auth from 'auth-astro';
 
 import node from '@astrojs/node';
 import netlify from "@astrojs/netlify";
-import vercel from '@astrojs/vercel/serverless';
-
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [auth({
     injectEndpoints: false
   }), starlight({
-    title: 'Starlight Auth',
+    title: 'MyCCNA Notes',
     components: {
       Search: './src/components/starlight/Search.astro'
     },
