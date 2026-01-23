@@ -11,7 +11,7 @@ export default defineConfig({
         {
           label: '学習ノート',
           // docsフォルダの中身を自動でサイドバーに表示する魔法の設定
-          autogenerate: { directory: 'docs' },
+          autogenerate: { directory: 'notes' },
         },
       ],
     }),
