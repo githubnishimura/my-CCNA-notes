@@ -34,7 +34,7 @@ export default defineConfig({
       }
     }]
   })],
-  output: 'server',
+  output: 'static',
 
   // Enable the correct adapter for your deployment (note: netlify is untested at the moment)
   // adapter: node({ mode: 'middleware' })
