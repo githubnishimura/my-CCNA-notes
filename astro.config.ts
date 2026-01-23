@@ -3,7 +3,6 @@ import starlight from '@astrojs/starlight';
 import cloudflare from '@astrojs/cloudflare';
 
 export default defineConfig({
-  // cloudflareアダプターを使う場合は、必ず 'server' にします
   output: 'server',
   adapter: cloudflare(),
 
@@ -12,7 +11,6 @@ export default defineConfig({
   },
 
   integrations: [
-    // ここから auth() を完全に削除しました
     starlight({
       title: 'MyCCNA Notes',
       social: {
