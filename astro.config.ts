@@ -13,6 +13,14 @@ export default defineConfig({
           // docsフォルダの中身を自動でサイドバーに表示する魔法の設定
           autogenerate: { directory: 'notes' },
         },
+        {
+          label: '基礎知識',
+          autogenerate: { directory: 'basics' }, // docs/basics/ を見る
+        },
+        {
+          label: '応用・演習',
+          autogenerate: { directory: 'advanced' }, // docs/advanced/ を見る
+        },        
       ],
     }),
   ],
