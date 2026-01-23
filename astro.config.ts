@@ -13,9 +13,7 @@ export default defineConfig({
     }
   }),
   integrations: [
-    auth({
-      injectEndpoints: false
-    }),
+    auth(),
     starlight({
       title: 'MyCCNA Notes',
       components: {
