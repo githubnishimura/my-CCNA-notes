@@ -37,5 +37,5 @@ export default defineConfig({
   // Enable the correct adapter for your deployment (note: netlify is untested at the moment)
   // adapter: node({ mode: 'middleware' })
   // adapter: netlify()
-  adapter: vercel()
+  //adapter: vercel()
 });
