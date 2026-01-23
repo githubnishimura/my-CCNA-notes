@@ -1,34 +1,47 @@
 ---
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { Card, CardGrid } from '@astrojs/starlight/components';
 ---
 
-<StarlightPage frontmatter={{ title: 'My CCNA Notes', template: 'splash' }}>
-  <div class="hero">
-    <h1>Welcome to My CCNA Study Notes</h1>
-    <p>CCNA合格を目指して学習内容をまとめています。</p>
-    <a href="/guides/example/">ノートを見る</a>
-  </div>
-</StarlightPage>
+<StarlightPage frontmatter={{ 
+	title: 'My CCNA Notes', 
+	tagline: 'CCNA合格を目指すための学習ログ・技術メモ',
+	template: 'splash',
+	hero: {
+		title: 'CCNA Study Guide',
+		tagline: '効率的に学び、確実に合格を掴み取るための個人ノートです。',
+		image: {
+			file: '../../assets/houston.webp',
+		},
+		actions: [
+			{
+				text: 'ノートを読む',
+				link: '/notes/study-guide/',
+				icon: 'right-arrow',
+				variant: 'primary',
+			},
+			{
+				text: 'GitHubで見る',
+				link: 'https://github.com/githubnishimura/my-CCNA-notes',
+				icon: 'external',
+			},
+		],
+	},
+}}>
 
-<style>
-  .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    padding: 5rem 0;
-    text-align: center;
-  }
-  h1 {
-    font-size: 3rem;
-    font-weight: bold;
-  }
-  a {
-    background: var(--sl-color-accent-high);
-    color: white;
-    padding: 0.8rem 1.6rem;
-    border-radius: 0.5rem;
-    text-decoration: none;
-    font-weight: bold;
-  }
-</style>
+<CardGrid stagger>
+	<Card title="最新のネットワーク技術" icon="pencil">
+		OSI参照モデルからルーティング、最新のワイヤレス技術まで。
+	</Card>
+	<Card title="コマンド備忘録" icon="add-document">
+		Cisco IOSコマンドを体系的に整理。
+	</Card>
+	<Card title="試験対策" icon="setting">
+		自身の弱点克服や、間違えやすいポイントのまとめ。
+	</Card>
+	<Card title="学習進捗" icon="rocket">
+		合格までのロードマップ。
+	</Card>
+</CardGrid>
+
+</StarlightPage>
