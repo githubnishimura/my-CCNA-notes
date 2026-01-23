@@ -1,25 +1,28 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import auth from 'auth-astro';
-import cloudflare from '@astrojs/cloudflare'; // これを追加
+import cloudflare from '@astrojs/cloudflare';
 
-// https://astro.build/config
 export default defineConfig({
-  // Cloudflareでログイン機能を使うための設定
-  output: 'server', 
-  adapter: cloudflare(), 
-
+  output: 'server',
+  adapter: cloudflare({
+    runtime: { mode: 'complete' },
+    session: {
+      driver: 'kv',
+      binding: 'SESSION' // 先ほどBindingsで設定した変数名
+    }
+  }),
   integrations: [
     auth({
       injectEndpoints: false
-    }), 
+    }),
     starlight({
       title: 'MyCCNA Notes',
       components: {
         Search: './src/components/starlight/Search.astro'
       },
       social: {
-        github: 'https://github.com/githubnishimura/my-CCNA-notes' // あなたのURLに直しました
+        github: 'https://github.com/githubnishimura/my-CCNA-notes'
       },
       sidebar: [{
         label: 'Guides',
@@ -36,5 +39,5 @@ export default defineConfig({
         }
       }]
     })
-  ],
+  ]
 });
