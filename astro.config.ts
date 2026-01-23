@@ -1,28 +1,14 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import cloudflare from '@astrojs/cloudflare';
 
 export default defineConfig({
-  output: 'server',
-  adapter: cloudflare(),
-
-  image: {
-    service: { entrypoint: 'astro/assets/services/noop' }
-  },
-
+  // adapter も一旦消して、完全な静的サイトとしてビルド
   integrations: [
     starlight({
       title: 'MyCCNA Notes',
-      social: {
-        github: 'https://github.com/githubnishimura/my-CCNA-notes'
-      },
-      sidebar: [{
-        label: 'Guides',
-        items: [{ label: 'Example Guide', link: '/guides/example/' }]
-      }, {
-        label: 'Reference',
-        autogenerate: { directory: 'reference' }
-      }]
-    })
-  ]
+      sidebar: [
+        { label: 'Guides', items: [{ label: 'Example Guide', link: '/guides/example/' }] },
+      ],
+    }),
+  ],
 });
