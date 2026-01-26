@@ -1,7 +1,7 @@
 ---
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import { Card, CardGrid } from '@astrojs/starlight/components';
-// 画像のインポートを削除しました
+import myLogo from '../assets/my-logo.jpg';
 ---
 
 <StarlightPage frontmatter={{ 
@@ -12,7 +12,7 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 		title: 'CCNA Study Guide',
 		tagline: '学んだことをメモした個人ノートです。',
 		image: {
-		  file: '/my-logo.jpg', // publicフォルダ直下ならこれだけでOK
+		  file: myLogo,
 		},
 		actions: [
 			{
