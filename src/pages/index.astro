@@ -8,13 +8,12 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 	title: 'My CCNA Notes', 
 	tagline: 'CCNA合格を目指すための学習ログ・技術メモ',
 	template: 'splash',
-	image: {
-	  file: '/my-logo.jpg', // publicフォルダ直下ならこれだけでOK
-	},
 	hero: {
 		title: 'CCNA Study Guide',
 		tagline: '学んだことをメモした個人ノートです。',
-		// imageの項目を完全に削除しました
+		image: {
+		  file: '/my-logo.jpg', // publicフォルダ直下ならこれだけでOK
+		},
 		actions: [
 			{
 				text: 'ノートを読む',
