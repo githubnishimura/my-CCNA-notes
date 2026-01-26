@@ -1,0 +1,7 @@
+/* 用語（2番目の列）の幅を広げて、改行させない設定 */
+.sl-markdown-content table td:nth-child(2),
+.sl-markdown-content table th:nth-child(2) {
+  min-width: 160px; /* お好みの幅に調整してください */
+  white-space: nowrap;
+  vertical-align: top;
+}
