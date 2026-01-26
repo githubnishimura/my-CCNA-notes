@@ -7,6 +7,9 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'MyCCNA Notes',
+      customCss: [
+        './src/styles/custom.css',
+      ],      
       sidebar: [
         {
           label: '学習ノート',
