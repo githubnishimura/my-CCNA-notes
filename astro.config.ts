@@ -23,7 +23,7 @@ export default defineConfig({
         }, 
         {
           label: '学習計画など',
-          autogenerate: { directory: 'oher' }, // docs/advanced/ を見る
+          autogenerate: { directory: 'other' }, // docs/advanced/ を見る
         },          
       ],
     }),
