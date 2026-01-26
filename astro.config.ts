@@ -20,7 +20,11 @@ export default defineConfig({
         {
           label: '応用・演習',
           autogenerate: { directory: 'advanced' }, // docs/advanced/ を見る
-        },        
+        }, 
+        {
+          label: '学習計画など',
+          autogenerate: { directory: 'oher' }, // docs/advanced/ を見る
+        },          
       ],
     }),
   ],
