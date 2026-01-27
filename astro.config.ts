@@ -26,7 +26,7 @@ export default defineConfig({
         }, 
         {
           label: '学習計画など',
-          autogenerate: { directory: 'other' }, // docs/other/ を見る
+          autogenerate: { directory: 'others' }, // docs/other/ を見る
         },          
       ],
     }),
