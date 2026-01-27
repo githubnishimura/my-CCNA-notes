@@ -6,15 +6,13 @@ export default defineConfig({
   // 前回の成功に合わせて、一度設定された方に合わせておいてください
   integrations: [
     starlight({
-      title: 'MyCCNA Notes',
-//      customCss: [
-//        './src/styles/custom.css',
-//      ],      
+      title: 'MyCCNA Notes',     
       sidebar: [
         {
-          label: '学習ノート',
-          // docsフォルダの中身を自動でサイドバーに表示する魔法の設定
-          autogenerate: { directory: 'notes' },
+          label: '学習ノート（日付）',
+          autogenerate: {
+          directory: 'notes',
+          collapsed: true,
         },
         {
           label: '基礎知識',
