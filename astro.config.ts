@@ -11,8 +11,9 @@ export default defineConfig({
         {
           label: '学習ノート（日付）',
           autogenerate: {
-          directory: 'notes',
-          collapsed: true,
+            directory: 'notes',
+            collapsed: true,
+          },
         },
         {
           label: '基礎知識',
