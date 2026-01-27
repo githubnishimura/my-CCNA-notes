@@ -18,15 +18,15 @@ export default defineConfig({
         },
         {
           label: '基礎知識',
-          autogenerate: { directory: 'basics' }, // docs/basics/ を見る
+          autogenerate: { directory: 'basics' }, 
         },
         {
           label: '応用・演習',
-          autogenerate: { directory: 'advanced' }, // docs/advanced/ を見る
+          autogenerate: { directory: 'advanced' }, 
         }, 
         {
           label: '学習計画など',
-          autogenerate: { directory: 'others' }, // docs/other/ を見る
+          autogenerate: { directory: 'others' }, 
         },          
       ],
     }),
