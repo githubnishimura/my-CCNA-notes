@@ -6,7 +6,16 @@ export default defineConfig({
   // 前回の成功に合わせて、一度設定された方に合わせておいてください
   integrations: [
     starlight({
-      title: 'MyCCNA Notes',     
+      title: 'MyCCNA Notes',
+      head: [
+        {
+          tag: 'link',
+          attrs: {
+            rel: 'icon',
+            href: '/favicon.svg?v=20260129', // ← 日付や番号を変える
+          },
+        },
+      ],      
       sidebar: [
         {
           label: '学習ノート（日付）',
