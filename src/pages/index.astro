@@ -1,7 +1,20 @@
 ---
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import { Card, CardGrid } from '@astrojs/starlight/components';
+import { getCollection } from 'astro:content'; // 追加
 import myLogo from '../assets/my-logo.jpg';
+
+// docsコレクションから 'notes/' ディレクトリのファイルを取得
+const allNotes = await getCollection('docs', ({ id }) => {
+  return id.startsWith('notes/');
+});
+
+// アルファベット順や日付順でソート（ここでは最初の1件を取得）
+// ファイル名が 2024-01-01.md のような形式なら sort() で最新が取れます
+const firstNote = allNotes.sort().reverse()[0];
+
+// リンクを動的に生成（ファイルが存在しない場合のフォールバックも設定）
+const dynamicLink = firstNote ? `/${firstNote.slug}/` : '/notes/';
 ---
 
 <StarlightPage frontmatter={{ 
@@ -17,7 +30,7 @@ import myLogo from '../assets/my-logo.jpg';
 		actions: [
 			{
 				text: 'ノートを読む',
-				link: '/notes/study-guide/',
+				link: dynamicLink, // ここを動的変数に変更
 				icon: 'right-arrow',
 				variant: 'primary',
 			},
