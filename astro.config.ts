@@ -35,7 +35,11 @@ export default defineConfig({
         {
           label: '学習計画など',
           autogenerate: { directory: 'others' }, 
-        },          
+        },
+        {
+          label: 'Sora AI動画',
+          link: '/my-videos', 
+        },        
       ],
     }),
   ],
